@@ -75,13 +75,13 @@
                 <div class="col-12">
                     <h2 class="page-title">Registro de factura</h2>
                     <div class="card shadow mb-4">
+                        <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
                         <div class="card-header">
                             <strong class="card-title">Registro</strong>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
-                                    <div class="col-md-6">
+                               <div class="col-md-6">
                                         <div class="form-group mb-3">
                                             <input style="display:none;" type="text" class="form-control"
                                                    id="txtNomina" name="txtNomina" value="00001606">
@@ -98,14 +98,15 @@
                                             <input type="file" class="form-control-file" id="archivosNuevos" name="archivos[]" multiple>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="button" onclick="agregarAsistenciaCurso()"
+                            <button type="submit"
                                     class="btn mb-2 btn-success float-right text-white">Registrar<span
                                     class="fe fe-chevron-right fe-16 ml-2"></span></button>
                         </div>
+
+                        </form>
                     </div> <!-- / .card -->
                 </div> <!-- .col-12 -->
             </div> <!-- .row -->
