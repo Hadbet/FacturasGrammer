@@ -10,7 +10,7 @@ $folio = $_POST['txtFolio'];
 $nomina = $_POST['txtNomina'];
 $nombre = $_POST['txtNombre'];
 
-$target_dir = "../documentacion/$folio.$nomina/"; // especifica el directorio donde se subirá el archivo
+$target_dir = "../documentacion/"; // especifica el directorio donde se subirá el archivo
 
 $Object = new DateTime();
 $Object->setTimezone(new DateTimeZone('America/Denver'));
@@ -25,11 +25,11 @@ if (!file_exists($target_dir)) {
 if (!empty($_FILES['archivos']['name'][0])) {
     // recorre cada archivo
     for ($i = 0; $i < count($_FILES['archivos']['name']); $i++) {
-        $target_file = $target_dir . basename($_FILES["archivos"]["name"][$i]); // especifica la ruta del archivo a subir
+        $target_file = $target_dir . $folio . $nomina . '.' . pathinfo($_FILES["archivos"]["name"][$i], PATHINFO_EXTENSION); // especifica la ruta del archivo a subir
 
         // intenta subir el archivo
         if (move_uploaded_file($_FILES["archivos"]["tmp_name"][$i], $target_file)) {
-            $insertDocumento= "INSERT INTO `Facturas`(`Folio`, `Documento`, `FechaRegistro`, `Usuario`, `Aprobacion`, `DocumentoWere`, `FolioWere`, `Estatus`, `FechaAprobacion`) VALUES ('$folio','$folio.$nomina','$DateAndTime','$nombre','','','',0,'')";
+            $insertDocumento= "INSERT INTO `Facturas`(`Folio`, `Documento`, `FechaRegistro`, `Usuario`, `Aprobacion`, `DocumentoWere`, `FolioWere`, `Estatus`, `FechaAprobacion`) VALUES ('$folio','$folio$nomina','$DateAndTime','$nombre','','','',0,'')";
             $rsinsertDocu=mysqli_query($conex,$insertDocumento);
             echo "El archivo ". basename( $_FILES["archivos"]["name"][$i]). " ha sido subido.";
         } else {
