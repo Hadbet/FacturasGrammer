@@ -169,7 +169,7 @@
                 let fechaData = new Date(data.data[i].Fecha);
                 fechaData.setHours(0, 0, 0, 0);
 
-                if (data.data[i].EstatusAsistencia == '0' && fechaData >= fechaActual) {
+                if (data.data[i].Estatus === '0') {
                     var newRow = $("<tr></tr>");
                     var idCell = $("<td></td>").text(data.data[i].IdFactura);
                     var folioCell = $("<td></td>").text(data.data[i].Folio);
