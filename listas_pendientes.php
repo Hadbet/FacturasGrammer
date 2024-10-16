@@ -42,10 +42,10 @@
                         <thead>
                           <tr>
                               <th>ID</th>
-                            <th>Folio</th>
+                            <th>Folio 45</th>
+                            <th>Documento</th>
                             <th>Fecha</th>
                             <th>Usuario</th>
-                            <th>Orden 45000000</th>
                             <th>Aceptar</th>
                             <th>Rechazar</th>
                           </tr>
