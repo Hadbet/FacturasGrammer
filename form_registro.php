@@ -80,19 +80,25 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label for="txtFolio">Folio 45000000</label>
-                                        <input type="text"  class="form-control"
-                                               id="txtFolio" value="">
+                                <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <input style="display:none;" type="text" class="form-control"
+                                                   id="txtNomina" name="txtNomina" value="00001606">
+                                            <input style="display:none;" type="text" class="form-control"
+                                                   id="txtNombre" name="txtNombre" value="Hadbet Ayari">
+                                            <label for="txtFolio">Folio 45000000</label>
+                                            <input type="text" class="form-control"
+                                                   id="txtFolio" name="txtFolio" value="">
+                                        </div>
+                                    </div> <!-- /.col -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="archivos">Subir archivos:</label>
+                                            <input type="file" class="form-control-file" id="archivosNuevos" name="archivos[]" multiple>
+                                        </div>
                                     </div>
-                                </div> <!-- /.col -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="archivos">Subir archivos:</label>
-                                        <input type="file" class="form-control-file" id="archivosNuevos" name="archivos[]" multiple>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -127,127 +133,8 @@
                 </div> <!-- .col-12 -->
             </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-
     </main> <!-- main -->
 </div> <!-- .wrapper -->
-
-<div class="modal fade modal-full" id="modal1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-     aria-hidden="true">
-    <button aria-label="" type="button" class="close px-2" data-dismiss="modal" aria-hidden="true">
-        <span aria-hidden="true">×</span>
-    </button>
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-
-                <h1>Desarrollo del curso</h1>
-                <hr>
-                <h2>¿El contenido del curso se apegó al temario?</h2>
-                <p>Responde y evalúa</p>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'1-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'1-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'1-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿Los conceptos aprendidos son de utilidad en mi trabajo?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'2-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'2-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'2-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿El material de apoyo fue el adecuado para el tema?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'3-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'3-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'3-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿El curso cumplió con mis expectativas?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'4-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'4-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'4-Mal')">
-                </div>
-
-                <br><br>
-                <form class="form-inline justify-content-center">
-                    <input id="txtComentariosCurso" class="form-control form-control-lg mr-sm-2 bg-transparent"
-                           type="text" placeholder="Comentarios adicionales" aria-label="Search">
-
-                </form>
-                <br>
-                <hr>
-                <br><br>
-                <h1>Evalua instructor</h1>
-                <hr>
-                <h2>¿Dominio del tema?</h2>
-                <div class="image-container one">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'5-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'5-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'5-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿Fue claro en la exposición?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'6-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'6-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'6-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿Resolvió mis dudas y preguntas al respecto?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'7-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'7-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'7-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿El trato fue amable y respetuoso en todo momento?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'8-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'8-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'8-Mal')">
-                </div>
-
-                <br><br>
-                <h2>¿Invito a la participación abierta?</h2>
-                <div class="image-container">
-                    <img src="assets/images/verde.png" onclick="handleClick(this,'9-Excelente')">
-                    <img src="assets/images/amarillo.png" onclick="handleClick(this,'9-Bien')"
-                         style="margin-left: 5px;margin-right: 5px">
-                    <img src="assets/images/rojo.png" onclick="handleClick(this,'9-Mal')">
-                </div>
-
-                <br><br>
-                <form class="form-inline justify-content-center">
-                    <input id="txtComentariosInstructor" class="form-control form-control-lg mr-sm-2 bg-transparent"
-                           type="text" placeholder="Comentarios adicionales" aria-label="Search">
-
-                </form>
-                <br>
-                <button onclick="guardarEvaluacion()" class="btn btn-primary btn-lg mb-2 my-2 my-sm-0" type="submit">
-                    Enviar
-                </button>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
 <script src="js/jquery.min.js"></script>
