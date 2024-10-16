@@ -25,7 +25,7 @@ if (!file_exists($target_dir)) {
 if (!empty($_FILES['archivos']['name'][0])) {
     // recorre cada archivo
     for ($i = 0; $i < count($_FILES['archivos']['name']); $i++) {
-        $target_file = $target_dir . $folio . $nomina . '.' . pathinfo($_FILES["archivos"]["name"][$i], PATHINFO_EXTENSION); // especifica la ruta del archivo a subir
+        $target_file = $target_dir . $folio . $nomina . '.' . strtolower(pathinfo($_FILES["archivos"]["name"][$i], PATHINFO_EXTENSION)); // especifica la ruta del archivo a subir
 
         // intenta subir el archivo
         if (move_uploaded_file($_FILES["archivos"]["tmp_name"][$i], $target_file)) {
