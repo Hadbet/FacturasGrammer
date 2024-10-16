@@ -11,7 +11,7 @@ function ContadorApu()
 
 
 
-    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a class=\"btn btn-primary\" href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`,  `Estatus`, `FechaAprobacion`, CONCAT('<button  class=\"btn btn-success\">Aceptar</button>') AS `Aceptar`, CONCAT('<button  class=\"btn btn-danger\">Rechazar</button>') AS `Rechazar`
+    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a class=\"btn btn-primary\" href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`,  `Estatus`, `FechaAprobacion`, CONCAT('<button  class=\"btn btn-success text-white\">Aceptar</button>') AS `Aceptar`, CONCAT('<button class=\"btn btn-danger\">Rechazar</button>') AS `Rechazar`
 FROM `Facturas` 
 WHERE `Estatus` = 0;");
 
