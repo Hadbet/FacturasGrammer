@@ -173,10 +173,21 @@
                     var newRow = $("<tr></tr>");
                     var idCell = $("<td></td>").text(data.data[i].IdFactura);
                     var folioCell = $("<td></td>").text(data.data[i].Folio);
-                    var documentoCell = $("<td></td>").text(data.data[i].Documento);
+                    var documentoCell = $("<td></td>");
+                    var button = $("<a></a>")
+                        .text("Ver Documento")
+                        .attr("href", data.data[i].Documento + ".pdf")
+                        .attr("target", "_blank")
+                        .addClass("btn btn-primary");
+                    documentoCell.append(button);
                     var fechaCell = $("<td></td>").text(data.data[i].FechaRegistro);
                     var usuarioCell = $("<td></td>").text(data.data[i].Usuario);
-                    var estatusCell = $("<td></td>").text(data.data[i].Estatus);
+                    var estatusCell = $("<td></td>");
+                    var span = $("<span></span>")
+                        .text("Pendiente")
+                        .addClass("badge")
+                        .css({"background-color": "yellow", "color": "black"});
+                    estatusCell.append(span);
 
                     // agrega las celdas a la fila y la fila a la tabla
                     newRow.append(idCell);
