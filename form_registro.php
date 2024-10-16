@@ -176,7 +176,7 @@
                     var documentoCell = $("<td></td>");
                     var button = $("<a></a>")
                         .text("Ver Documento")
-                        .attr("href", "documentacion/"+ data.data[i].Documento + ".PDF")
+                        .attr("href", "documentacion/"+ data.data[i].Documento + ".pdf")
                         .attr("target", "_blank")
                         .addClass("btn btn-primary");
                     documentoCell.append(button);
