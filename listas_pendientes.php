@@ -88,7 +88,7 @@
                       { data: 'Folio' },
                       { data: 'DocumentoLink' },
                       { data: 'FechaRegistro' },
-                      { data: 'Usuario' }
+                      { data: 'Usuario' },
                       { data: 'Acciones' }
                     ],
                     autoWidth: true,
