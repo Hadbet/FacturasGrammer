@@ -89,7 +89,8 @@
                       { data: 'DocumentoLink' },
                       { data: 'FechaRegistro' },
                       { data: 'Usuario' },
-                      { data: 'Acciones' }
+                      { data: 'Aceptar' },
+                        { data: 'Rechazar' }
                     ],
                     autoWidth: true,
                     "lengthMenu": [

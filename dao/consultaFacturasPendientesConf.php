@@ -9,7 +9,7 @@ function ContadorApu()
     $con = new LocalConector();
     $conex = $con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`,  `Estatus`, `FechaAprobacion`, CONCAT('<button>Aceptar</button><button>Rechazar</button>') AS `Acciones`
+    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`,  `Estatus`, `FechaAprobacion`, CONCAT('<button>Aceptar</button>') AS `Aceptar`, CONCAT('<button>Rechazar</button>') AS `Rechazar`
 FROM `Facturas` 
 WHERE `Estatus` = 0;");
 
