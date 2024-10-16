@@ -41,13 +41,13 @@
                       <table class="table datatables" id="dataTable-1">
                         <thead>
                           <tr>
+                              <th>ID</th>
                             <th>Folio</th>
                             <th>Fecha</th>
                             <th>Usuario</th>
                             <th>Orden 45000000</th>
                             <th>Aceptar</th>
                             <th>Rechazar</th>
-                            <th>Certificado</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -84,13 +84,12 @@
                   $('#dataTable-1').DataTable({
                     data: data.data,
                     columns: [
-                      { data: 'IdBitacoraCurso' },
-                      { data: 'Nombre' },
-                      { data: 'Fecha' },
-                      { data: 'Horario' },
-                      { data: 'Curso' },
-                      { data: 'boton' },
-                      { data: 'certificados' }
+                      { data: 'IdFactura' },
+                      { data: 'Folio' },
+                      { data: 'DocumentoLink' },
+                      { data: 'FechaRegistro' },
+                      { data: 'Usuario' }
+                      { data: 'Acciones' }
                     ],
                     autoWidth: true,
                     "lengthMenu": [
