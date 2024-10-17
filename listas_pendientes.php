@@ -69,32 +69,21 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="defaultModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="defaultModalLabel">Gracias por confirma llena los siguientes datos.</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Tipo :<span id="txtTipoL"></span></p>
-                    <p>Area :<span id="txtAreaL"></span></p>
-                    <br>
-                    <p>DOCUMENTACION</p>
-                    <table id="tablaArchivos" class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Nombre</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+
                     <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
                         <input style="display: none" type="text" name="nombreInstructor" class="form-control drgpicker" id="txtNombreInstrictorAux"
                                value="" aria-describedby="button-addon2">
-                        <div class="form-group">
-                            <label for="archivos">Subir archivos:</label>
-                            <input type="file" class="form-control-file" id="archivosNuevos" name="archivos[]" multiple>
-                        </div>
+
+                        <label for="txtFolioWere" id="lblTituloModal">Folio were</label>
+                        <input type="text" name="txtFolioWere" class="form-control" id="txtFolioWere"
+                               value="" aria-describedby="button-addon2">
+                        <br>
                         <!-- Botón para enviar el formulario -->
                         <button type="submit" id="btnEnviarNuevos" class="btn btn-primary">Enviar</button>
                     </form>
@@ -163,8 +152,10 @@
           });
       }
 
-      function precargaModal() {
-
+      function precargaModal(id,estatus) {
+          if (estatus===2){
+              document.getElementById("lblTituloModal").innerText = 'Comentarios'
+          }
       }
 
     </script>
