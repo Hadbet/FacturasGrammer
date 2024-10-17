@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -21,197 +21,154 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-    <style>
-      #dataTable-1 tfoot input {
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .copyButton {
-        color: white;
-        background-color: blue !important;
-      }
-
-      .csvButton {
-        color: white;
-        background-color: forestgreen !important; /* Reemplaza 'strongGreen' con el color verde fuerte que quieras */
-      }
-
-      .excelButton {
-        color: white;
-        background-color: green !important;
-      }
-
-      .pdfButton {
-        color: white;
-        background-color: red !important;
-      }
-
-      .printButton {
-        color: white;
-        background-color: gray !important;
-      }
-    </style>
-  </head>
-  <body class="vertical  light  ">
-    <div class="wrapper">
-      <?php
-            require_once('estaticos/navegador.php');
+</head>
+<body class="vertical  light  ">
+<div class="wrapper">
+    <?php
+    require_once('estaticos/navegador.php');
     ?>
-      <main role="main" class="main-content">
+    <main role="main" class="main-content">
         <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <h2 class="mb-2 page-title">Lista de general</h2>
-              <p class="card-text">Puedes filtra por curso en dado caso que quieras sacar cada uno de manera individual</p>
-              <div class="row my-4">
-                <!-- Small table -->
-                <div class="col-md-12">
-                  <div class="card shadow">
-                    <div class="card-body">
-                      <!-- table -->
-                      <table class="table datatables" id="dataTable-1">
-                        <thead>
-                        <tr>
-                          <th>Nomina</th>
-                          <th>Nombre</th>
-                          <th>FechaRegistro</th>
-                          <th>Curso</th>
-                          <th>Horario</th>
-                          <th>Evaluacion</th>
-                          <th>APU</th>
-                          <th>ShiftLeader</th>
-                          <th>Supervisor</th>
-                          <th>Estatus</th>
-                        </tr>
-                        </thead>
-                        <tfoot>
-                        <tr>
-                          <th>Nomina</th>
-                          <th>Nombre</th>
-                          <th>FechaRegistro</th>
-                          <th>Curso</th>
-                          <th>Horario</th>
-                          <th>Evaluacion</th>
-                          <th>APU</th>
-                          <th>ShiftLeader</th>
-                          <th>Supervisor</th>
-                          <th>Estatus</th>
-                        </tr>
-                        </tfoot>
-                        <tbody>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="mb-2 page-title">Lista de facturas pendientes por revisar</h2>
+                    <div class="row my-4">
+                        <!-- Small table -->
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <!-- table -->
+                                    <table class="table datatables" id="dataTable-1">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Folio 45</th>
+                                            <th>Documento</th>
+                                            <th>Fecha</th>
+                                            <th>Usuario</th>
+                                            <th>Estatus</th>
+                                            <th>Aprobo</th>
+                                            <th>Comentarios</th>
+                                            <th>Folio Were</th>
+                                            <th>Fecha Aprobacion</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div> <!-- simple table -->
-              </div> <!-- end section -->
-            </div> <!-- .col-12 -->
-          </div> <!-- .row -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> <!-- simple table -->
+                    </div> <!-- end section -->
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
         </div> <!-- .container-fluid -->
 
-      </main> <!-- main -->
-    </div> <!-- .wrapper -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/simplebar.min.js"></script>
-    <script src='js/daterangepicker.js'></script>
-    <script src='js/jquery.stickOnScroll.js'></script>
-    <script src="js/tinycolor-min.js"></script>
-    <script src="js/config.js"></script>
-    <script src='js/jquery.dataTables.min.js'></script>
-    <script src='js/dataTables.bootstrap4.min.js'></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+    </main> <!-- main -->
+</div> <!-- .wrapper -->
 
-    <script>
-      $.ajax({
-        url: 'https://grammermx.com/RH/Cursos/dao/consultaTablaTotal.php', // Reemplaza esto con la URL de tus datos
+<div class="modal fade modal-right modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">Gracias por confirma llena los siguientes datos.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="dao/daoActualizarWere.php" method="post" enctype="multipart/form-data">
+                    <input style="display: none" type="text" name="txtFolioModal" class="form-control drgpicker" id="txtFolioModal"
+                           value="" aria-describedby="button-addon2">
+
+                    <input style="display: none" type="text" name="txtNombreAprobador" class="form-control drgpicker" id="txtNombreAprobador"
+                           value="Jesus" aria-describedby="button-addon2">
+
+                    <input style="display: none" type="text" name="txtEstatus" class="form-control drgpicker" id="txtEstatus"
+                           value="" aria-describedby="button-addon2">
+
+                    <label for="txtFolioWere" id="lblTituloModal">Folio were</label>
+                    <input type="text" name="txtFolioWere" class="form-control" id="txtFolioWere"
+                           value="" aria-describedby="button-addon2">
+                    <br>
+                    <!-- Botón para enviar el formulario -->
+                    <button type="submit" id="btnEnviarNuevos" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src='js/daterangepicker.js'></script>
+<script src='js/jquery.stickOnScroll.js'></script>
+<script src="js/tinycolor-min.js"></script>
+<script src="js/config.js"></script>
+<script src='js/jquery.dataTables.min.js'></script>
+<script src='js/dataTables.bootstrap4.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script>
+    $.ajax({
+        url: 'https://grammermx.com/Trafico/Facturas/dao/consultaFacturasPendientesConf.php', // Reemplaza esto con la URL de tus datos
         dataType: 'json',
         success: function(data) {
-          var table = $('#dataTable-1').DataTable({
-            data: data.data,
-            columns: [
-              { data: 'Nomina' },
-              { data: 'Nombre' },
-              { data: 'FechaRegistro' },
-              { data: 'Curso' },
-              { data: 'Horario' },
-              { data: 'Evaluacion' },
-              { data: 'APU' },
-              { data: 'ShiftLeader' },
-              { data: 'Supervisor' },
-              { data: 'Estatus' }
-            ],
-            autoWidth: true,
-            "lengthMenu": [
-              [16, 32, 64, -1],
-              [16, 32, 64, "All"]
-            ],
-            dom: 'Bfrtip',
-            buttons: [
-              {
-                extend: 'copy',
-                className: 'btn btn-sm copyButton'
-              },
-              {
-                extend: 'csv',
-                className: 'btn btn-sm csvButton'
-              },
-              {
-                extend: 'excel',
-                className: 'btn btn-sm excelButton'
-              },
-              {
-                extend: 'pdf',
-                className: 'btn btn-sm pdfButton'
-              },
-              {
-                extend: 'print',
-                className: 'btn btn-sm printButton'
-              }
-            ],
-            initComplete: function () {
-              this.api().columns().every( function () {
-                var column = this;
-                var input = document.createElement("input");
-                input.className = 'form-control form-control-sm';
-                $(input).appendTo($(column.footer()).empty())
-                        .on('keyup change clear', function () {
-                          if (column.search() !== this.value) {
-                            column.search(this.value).draw();
-                          }
-                        });
-              });
-            }
-          });
+            $('#dataTable-1').DataTable({
+                data: data.data,
+                columns: [
+                    { data: 'IdFactura' },
+                    { data: 'Folio' },
+                    { data: 'DocumentoLink' },
+                    { data: 'FechaRegistro' },
+                    { data: 'Usuario' },
+                    { data: 'Estatus' },
+                    { data: 'Aprobacion' },
+                    { data: 'Comentarios' },
+                    { data: 'FolioWere' },
+                    { data: 'FechaAprobacion' }
+                ],
+                autoWidth: true,
+                "lengthMenu": [
+                    [16, 32, 64, -1],
+                    [16, 32, 64, "All"]
+                ]
+            });
         }
-      });
-    </script>
-    <script src="js/apps.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    });
+</script>
+<script src="js/apps.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag()
-      {
+    function gtag()
+    {
         dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-56159088-1');
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
 
-      function verFormato(curso,horario,fecha) {
-        var link = "https://grammermx.com/RH/Cursos/pruebaPDF.php?curso="+curso+"&horario="+horario+"&fecha="+fecha;
-        window.open(link, '_blank');
-      }
-    </script>
-  </body>
+
+    function precargaModal(id,estatus) {
+        document.getElementById("txtFolioModal").value = id;
+        if (estatus===2){
+            document.getElementById("txtEstatus").value = '2';
+            document.getElementById("lblTituloModal").innerText = 'Comentarios'
+        }else{
+            document.getElementById("txtEstatus").value = '1';
+            document.getElementById("lblTituloModal").innerText = 'Folio Were'
+        }
+    }
+
+</script>
+</body>
 </html>
