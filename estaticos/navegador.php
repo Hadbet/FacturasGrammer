@@ -36,7 +36,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="listas_base.php"><span class="ml-1 item-text">Aceptados</span></a>
+                        <a class="nav-link pl-3" href="listas_base.php"><span class="ml-1 item-text">Reporte</span></a>
                     </li>
                 </ul>
             </li>
