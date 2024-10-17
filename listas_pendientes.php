@@ -76,8 +76,11 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
-                        <input style="display: none" type="text" name="nombreInstructor" class="form-control drgpicker" id="txtNombreInstrictorAux"
+                    <form action="dao/daoActualizarWere.php" method="post" enctype="multipart/form-data">
+                        <input style="display: none" type="text" name="txtNombreAprobador" class="form-control drgpicker" id="txtNombreAprobador"
+                               value="" aria-describedby="button-addon2">
+
+                        <input style="display: none" type="text" name="txtEstatus" class="form-control drgpicker" id="txtEstatus"
                                value="" aria-describedby="button-addon2">
 
                         <label for="txtFolioWere" id="lblTituloModal">Folio were</label>
@@ -145,16 +148,14 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
 
-      function aceptarPeticion() {
-          $.getJSON('https://grammermx.com/Trafico/Facturas/dao/consultaFacturasPendientes.php', function (data) {
-              data.data[i].IdFactura
-
-          });
-      }
 
       function precargaModal(id,estatus) {
           if (estatus===2){
+              document.getElementById("txtEstatus").value = '2';
               document.getElementById("lblTituloModal").innerText = 'Comentarios'
+          }else{
+              document.getElementById("txtEstatus").value = '1';
+              document.getElementById("lblTituloModal").innerText = 'Folio Were'
           }
       }
 
