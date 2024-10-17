@@ -64,6 +64,48 @@
 
       </main> <!-- main -->
     </div> <!-- .wrapper -->
+
+    <div class="modal fade modal-right modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="defaultModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Tipo :<span id="txtTipoL"></span></p>
+                    <p>Area :<span id="txtAreaL"></span></p>
+                    <br>
+                    <p>DOCUMENTACION</p>
+                    <table id="tablaArchivos" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Nombre</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <form action="dao/subirMasArchivos.php" method="post" enctype="multipart/form-data">
+                        <input style="display: none" type="text" name="nombreInstructor" class="form-control drgpicker" id="txtNombreInstrictorAux"
+                               value="" aria-describedby="button-addon2">
+                        <div class="form-group">
+                            <label for="archivos">Subir archivos:</label>
+                            <input type="file" class="form-control-file" id="archivosNuevos" name="archivos[]" multiple>
+                        </div>
+                        <!-- Botón para enviar el formulario -->
+                        <button type="submit" id="btnEnviarNuevos" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/moment.min.js"></script>
@@ -114,6 +156,16 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
 
+      function aceptarPeticion() {
+          $.getJSON('https://grammermx.com/Trafico/Facturas/dao/consultaFacturasPendientes.php', function (data) {
+              data.data[i].IdFactura
+
+          });
+      }
+
+      function precargaModal() {
+
+      }
 
     </script>
   </body>
