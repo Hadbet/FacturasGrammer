@@ -25,7 +25,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="forms">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="form_cursos.php"><span class="ml-1 item-text">Pendientes</span></a>
+                        <a class="nav-link pl-3" href="listas_pendientes.php"><span class="ml-1 item-text">Pendientes</span></a>
                     </li>
                 </ul>
             </li>
@@ -36,8 +36,7 @@
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="./table_basic.php"><span class="ml-1 item-text">Aceptados</span></a>
-                        <a class="nav-link pl-3" href="profile.php"><span class="ml-1 item-text">Rechazados</span></a>
+                        <a class="nav-link pl-3" href="listas_base.php"><span class="ml-1 item-text">Aceptados</span></a>
                     </li>
                 </ul>
             </li>
@@ -52,7 +51,7 @@
                     <span class="ml-3 item-text">Inicio</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="contact">
-                    <a class="nav-link pl-3" href="form_asistencia.php"><span class="ml-1">Registro de factura</span></a>
+                    <a class="nav-link pl-3" href="form_registro.php"><span class="ml-1">Registro de factura</span></a>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -61,8 +60,7 @@
                     <span class="ml-3 item-text">Historicos</span>
                 </a>
                 <ul class="collapse list-unstyled pl-4 w-100" id="support">
-                    <a class="nav-link pl-3" href="./support-center.php"><span class="ml-1">Pendientes</span></a>
-                    <a class="nav-link pl-3" href="./support-tickets.php"><span class="ml-1">Reporte</span></a>
+                    <a class="nav-link pl-3" href="listas_base.php"><span class="ml-1">Reporte</span></a>
                 </ul>
             </li>
         </ul>
