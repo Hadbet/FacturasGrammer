@@ -77,8 +77,11 @@
                 <div class="modal-body">
 
                     <form action="dao/daoActualizarWere.php" method="post" enctype="multipart/form-data">
-                        <input style="display: none" type="text" name="txtNombreAprobador" class="form-control drgpicker" id="txtNombreAprobador"
+                        <input style="display: none" type="text" name="txtFolioModal" class="form-control drgpicker" id="txtFolioModal"
                                value="" aria-describedby="button-addon2">
+
+                        <input style="display: none" type="text" name="txtNombreAprobador" class="form-control drgpicker" id="txtNombreAprobador"
+                               value="Jesus" aria-describedby="button-addon2">
 
                         <input style="display: none" type="text" name="txtEstatus" class="form-control drgpicker" id="txtEstatus"
                                value="" aria-describedby="button-addon2">
@@ -150,6 +153,7 @@
 
 
       function precargaModal(id,estatus) {
+          document.getElementById("txtFolioModal").value = id;
           if (estatus===2){
               document.getElementById("txtEstatus").value = '2';
               document.getElementById("lblTituloModal").innerText = 'Comentarios'

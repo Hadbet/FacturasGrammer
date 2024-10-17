@@ -5,9 +5,9 @@ include_once('db/db_Facturas.php');
 $con = new LocalConector();
 $conex=$con->conectar();
 
-$folio = $_POST['txtFolio'];
-$folioWere = $_POST['txtFolio'];
-$nombre = $_POST['txtFolio'];
+$folio = $_POST['txtFolioModal'];
+$folioWere = $_POST['txtFolioWere'];
+$nombre = $_POST['txtNombreAprobador'];
 $estatus = $_POST['txtEstatus'];
 
 
