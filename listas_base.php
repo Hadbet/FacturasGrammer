@@ -139,7 +139,43 @@
                 "lengthMenu": [
                     [16, 32, 64, -1],
                     [16, 32, 64, "All"]
-                ]
+                ],
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'copy',
+                        className: 'btn btn-sm copyButton'
+                    },
+                    {
+                        extend: 'csv',
+                        className: 'btn btn-sm csvButton'
+                    },
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-sm excelButton'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn btn-sm pdfButton'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn btn-sm printButton'
+                    }
+                ],
+                initComplete: function () {
+                    this.api().columns().every( function () {
+                        var column = this;
+                        var input = document.createElement("input");
+                        input.className = 'form-control form-control-sm';
+                        $(input).appendTo($(column.footer()).empty())
+                            .on('keyup change clear', function () {
+                                if (column.search() !== this.value) {
+                                    column.search(this.value).draw();
+                                }
+                            });
+                    });
+                }
             });
         }
     });
