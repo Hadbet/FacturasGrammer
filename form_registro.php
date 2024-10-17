@@ -271,7 +271,7 @@
                     newRow.append(comentariosCell);
                     newRow.append(foliowereCell);
                     newRow.append(fechaAprobacionCell);
-                    table.append(newRow);
+                    tablaGeneral.append(newRow);
                 }
             }
         });
