@@ -137,6 +137,37 @@
                 </div> <!-- .col-12 -->
             </div> <!-- .row -->
         </div> <!-- .container-fluid -->
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Mis facturas generales</h5>
+                            <table id="tablaGeneral" class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Folio</th>
+                                    <th>Documento</th>
+                                    <th>Fecha Peticion</th>
+                                    <th>Usuario Peticion</th>
+                                    <th>Estatus</th>
+                                    <th>Aprobo</th>
+                                    <th>Comentarios</th>
+                                    <th>Folio Were</th>
+                                    <th>Fecha Aprobacion</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- / .card -->
+                </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+
     </main> <!-- main -->
 </div> <!-- .wrapper -->
 
@@ -161,13 +192,9 @@
     function cargarHorarios() {
         $.getJSON('https://grammermx.com/Trafico/Facturas/dao/consultaFacturasPendientes.php', function (data) {
             var table = $("#tablaCursosPendientes");
-            let fechaActual = new Date();
-            fechaActual.setHours(0, 0, 0, 0);
+            var tablaGeneral = $("#tablaGeneral");
 
             for (var i = 0; i < data.data.length; i++) {
-
-                let fechaData = new Date(data.data[i].Fecha);
-                fechaData.setHours(0, 0, 0, 0);
 
                 if (data.data[i].Estatus === '0') {
                     var newRow = $("<tr></tr>");
@@ -196,6 +223,54 @@
                     newRow.append(fechaCell);
                     newRow.append(usuarioCell);
                     newRow.append(estatusCell);
+                    table.append(newRow);
+                }
+
+                if (data.data[i].Estatus === '1' || data.data[i].Estatus === '2') {
+                    var newRow = $("<tr></tr>");
+                    var idCell = $("<td></td>").text(data.data[i].IdFactura);
+                    var folioCell = $("<td></td>").text(data.data[i].Folio);
+                    var documentoCell = $("<td></td>");
+                    var button = $("<a></a>")
+                        .text("Ver Documento")
+                        .attr("href", "documentacion/"+ data.data[i].Documento + ".pdf")
+                        .attr("target", "_blank")
+                        .addClass("btn btn-primary");
+                    documentoCell.append(button);
+                    var fechaCell = $("<td></td>").text(data.data[i].FechaRegistro);
+                    var usuarioCell = $("<td></td>").text(data.data[i].Usuario);
+                    var estatusCell = $("<td></td>");
+
+                    if (data.data[i].Estatus === '1'){
+                        var textoEstatus = 'Confirmado';
+                        var color = 'green';
+                    }else {
+                        var textoEstatus = 'Rechazado';
+                        var color = 'red';
+                    }
+                    var span = $("<span></span>")
+                        .text(textoEstatus)
+                        .addClass("badge")
+                        .css({"background-color": color, "color": "white"});
+                    estatusCell.append(span);
+
+
+                    var aprobacionCell = $("<td></td>").text(data.data[i].Aprobacion);
+                    var comentariosCell = $("<td></td>").text(data.data[i].Comentarios);
+                    var foliowereCell = $("<td></td>").text(data.data[i].FolioWere);
+                    var fechaAprobacionCell = $("<td></td>").text(data.data[i].FechaAprobacion);
+
+                    // agrega las celdas a la fila y la fila a la tabla
+                    newRow.append(idCell);
+                    newRow.append(folioCell);
+                    newRow.append(documentoCell);
+                    newRow.append(fechaCell);
+                    newRow.append(usuarioCell);
+                    newRow.append(estatusCell);
+                    newRow.append(aprobacionCell);
+                    newRow.append(comentariosCell);
+                    newRow.append(foliowereCell);
+                    newRow.append(fechaAprobacionCell);
                     table.append(newRow);
                 }
             }

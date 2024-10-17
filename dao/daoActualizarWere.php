@@ -18,7 +18,7 @@ $DateAndTime = $Object->format("Y/m/d H:i:s");
 if ($estatus == "1"){
     $insertDocumento= "UPDATE `Facturas` SET `Aprobacion`='$nombre',`FolioWere`='$folioWere',`Estatus`='1',`FechaAprobacion`='$DateAndTime',`Comentarios`='' WHERE `IdFactura` = '$folio'";
 }else{
-    $insertDocumento= "UPDATE `Facturas` SET `Aprobacion`='$nombre',`FolioWere`='',`Estatus`='1',`FechaAprobacion`='$DateAndTime',`Comentarios`='$folioWere' WHERE `IdFactura` = '$folio'";
+    $insertDocumento= "UPDATE `Facturas` SET `Aprobacion`='$nombre',`FolioWere`='',`Estatus`='2',`FechaAprobacion`='$DateAndTime',`Comentarios`='$folioWere' WHERE `IdFactura` = '$folio'";
 }
 
 
