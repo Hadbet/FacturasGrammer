@@ -86,7 +86,7 @@
                                             <input style="display:none;" type="text" class="form-control"
                                                    id="txtNomina" name="txtNomina" value="00001606">
                                             <input style="display:none;" type="text" class="form-control"
-                                                   id="txtNombre" name="txtNombre" value="Hadbet Ayari">
+                                                   id="txtNombre" name="txtNombre" value="Nancy Goiz">
                                             <label for="txtFolio">Folio 45000000</label>
                                             <input type="text" class="form-control"
                                                    id="txtFolio" name="txtFolio" value="">

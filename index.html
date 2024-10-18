@@ -39,17 +39,13 @@
         <div class="signin-signup">
             <form id="FormSolicitante" action="dao/login.php"  method="post" class="sign-in-form">
                 <h2 class="title">Iniciar sesión</h2>
-
-                <p class="social-text" style="color: lightslategrey">Si aún no tienes cuenta solamente ingresa con tu número de nómina y tu contraseña es tu Tag
-                    una vez que entres podrás cambiar tu contraseña o dejarla como esta</p>
-
                 <div id=aviso></div>
                 <div id='correoAux' class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Nómina" name="nomina" id="nomina"  required />
                 </div>
                 <div class="input-field">
-                    <i class="fas fa-facebook"></i>
+                    <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Contraseña" name="password" id="password" required />
                 </div>
                 <input type="submit" name="btnSolicitante" value="Iniciar Sesión" class="btn solid" />
@@ -67,7 +63,11 @@
                 </div>
             </form>
             <form id="FormAdministrador" action="dao/login.php" method="post" class="sign-up-form">
-                <h2 class="title">Administrador</h2>
+                <h2 class="title">Crea tu cuenta</h2>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="text" name="nomina" placeholder="Nomina" required/>
+                </div>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" name="usuario" placeholder="Usuario" required/>
@@ -76,7 +76,7 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required/>
                 </div>
-                <input type="submit" class="btn" value="Iniciar sesión" name="btnAdministrativos"/>
+                <input type="submit" class="btn" value="Registrar" name="btnAdministrativos"/>
                 <p class="social-text">Sigue a Grammer en sus diferentes plataformas</p>
                 <div class="social-media">
                     <a href="https://www.facebook.com/grammerqueretaro/?locale=es_LA" class="social-icon">
@@ -99,9 +99,9 @@
     <div class="panels-container">
         <div class="panel left-panel">
             <div class="content">
-                <h3>¿Eres Administrador?</h3>
+                <h3>¿No tienes cuenta?</h3>
                 <p>
-                    ¡Haz clic al siguiente botón para iniciar como administrador!
+                    ¡Haz clic al siguiente botón para crear una!
                 </p>
                 <button class="btn transparent" id="sign-up-btn">
                     Entrar
@@ -111,9 +111,9 @@
         </div>
         <div class="panel right-panel">
             <div class="content">
-                <h3>¿Quieres inscribirte a un curso?</h3>
+                <h3>Si tienes cuenta</h3>
                 <p>
-                    Entra aquí e ingresa solo tu nómina y correo para comenzar
+                    Entra aquí e ingresa solo con tu nómina y password para comenzar
                 </p>
                 <button class="btn transparent" id="sign-in-btn">
                     Entrar
