@@ -272,6 +272,7 @@
                     // agrega las celdas a la fila y la fila a la tabla
                     newRow.append(idCell);
                     newRow.append(folioCell);
+                    newRow.append(facturaCell);
                     newRow.append(documentoCell);
                     newRow.append(fechaCell);
                     newRow.append(usuarioCell);
