@@ -90,6 +90,10 @@
                                             <label for="txtFolio">Folio 45000000</label>
                                             <input type="text" class="form-control"
                                                    id="txtFolio" name="txtFolio" value="">
+                                            <br>
+                                            <label for="txtFactura">Numero de Factura</label>
+                                            <input type="text" class="form-control"
+                                                   id="txtFactura" name="txtFactura" value="">
                                         </div>
                                     </div> <!-- /.col -->
                                     <div class="col-md-6">
@@ -123,6 +127,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Folio</th>
+                                    <th>Factura</th>
                                     <th>Documento</th>
                                     <th>Fecha Peticion</th>
                                     <th>Usuario Peticion</th>
@@ -200,6 +205,7 @@
                     var newRow = $("<tr></tr>");
                     var idCell = $("<td></td>").text(data.data[i].IdFactura);
                     var folioCell = $("<td></td>").text(data.data[i].Folio);
+                    var facturaCell = $("<td></td>").text(data.data[i].IdFactura);
                     var documentoCell = $("<td></td>");
                     var button = $("<a></a>")
                         .text("Ver Documento")
@@ -219,6 +225,7 @@
                     // agrega las celdas a la fila y la fila a la tabla
                     newRow.append(idCell);
                     newRow.append(folioCell);
+                    newRow.append(facturaCell);
                     newRow.append(documentoCell);
                     newRow.append(fechaCell);
                     newRow.append(usuarioCell);

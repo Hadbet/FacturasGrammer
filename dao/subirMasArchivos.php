@@ -9,6 +9,7 @@ $nombreInstructor = $_POST['nombreInstructor'];
 $folio = $_POST['txtFolio'];
 $nomina = $_POST['txtNomina'];
 $nombre = $_POST['txtNombre'];
+$factura = $_POST['txtFactura'];
 
 $target_dir = "../documentacion/"; // especifica el directorio donde se subirá el archivo
 
@@ -29,7 +30,7 @@ if (!empty($_FILES['archivos']['name'][0])) {
 
         // intenta subir el archivo
         if (move_uploaded_file($_FILES["archivos"]["tmp_name"][$i], $target_file)) {
-            $insertDocumento= "INSERT INTO `Facturas`(`Folio`, `Documento`, `FechaRegistro`, `Usuario`, `Aprobacion`, `DocumentoWere`, `FolioWere`, `Estatus`, `FechaAprobacion`) VALUES ('$folio','$folio$nomina','$DateAndTime','$nombre','','','',0,'')";
+            $insertDocumento= "INSERT INTO `Facturas`(`Folio`, `Documento`, `FechaRegistro`, `Usuario`, `Aprobacion`, `FacturaId`, `FolioWere`, `Estatus`, `FechaAprobacion`) VALUES ('$folio','$folio$nomina','$DateAndTime','$nombre','','$factura','',0,'')";
             $rsinsertDocu=mysqli_query($conex,$insertDocumento);
             echo "El archivo ". basename( $_FILES["archivos"]["name"][$i]). " ha sido subido.";
         } else {
