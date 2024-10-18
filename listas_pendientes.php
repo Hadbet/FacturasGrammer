@@ -43,6 +43,7 @@
                           <tr>
                               <th>ID</th>
                             <th>Folio 45</th>
+                              <th>Factura</th>
                             <th>Documento</th>
                             <th>Fecha</th>
                             <th>Usuario</th>
@@ -123,6 +124,7 @@
                     columns: [
                       { data: 'IdFactura' },
                       { data: 'Folio' },
+                        { data: 'FacturaId' },
                       { data: 'DocumentoLink' },
                       { data: 'FechaRegistro' },
                       { data: 'Usuario' },
