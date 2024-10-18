@@ -9,7 +9,7 @@ function ContadorApu()
     $con = new LocalConector();
     $conex = $con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a target=\"_blank\" class=\"btn btn-primary\" href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`, `Aprobacion`, `FolioWere`, `FechaAprobacion`, `Comentarios`,
+    $datos = mysqli_query($conex, "SELECT `IdFactura`, `Folio`, CONCAT('<a target=\"_blank\" class=\"btn btn-primary\" href=\"documentacion/', `Documento`, '.pdf\">', 'Ver documento', '</a>') AS `DocumentoLink`, `FechaRegistro`, `Usuario`, `Aprobacion`, `FolioWere`, `FechaAprobacion`, `FacturaId`, `Comentarios`,
 CASE 
     WHEN `Estatus` = 0 THEN '<span class=\"badge\" style=\"background-color: yellow; color: white;\">Pendiente</span>'
     WHEN `Estatus` = 1 THEN '<span class=\"badge\" style=\"background-color: green; color: white;\">Aprobado</span>'

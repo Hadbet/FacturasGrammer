@@ -154,6 +154,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Folio</th>
+                                    <th>Factura</th>
                                     <th>Documento</th>
                                     <th>Fecha Peticion</th>
                                     <th>Usuario Peticion</th>
@@ -237,6 +238,7 @@
                     var newRow = $("<tr></tr>");
                     var idCell = $("<td></td>").text(data.data[i].IdFactura);
                     var folioCell = $("<td></td>").text(data.data[i].Folio);
+                    var facturaCell = $("<td></td>").text(data.data[i].FacturaId);
                     var documentoCell = $("<td></td>");
                     var button = $("<a></a>")
                         .text("Ver Documento")
