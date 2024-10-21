@@ -91,7 +91,7 @@
                                             <input type="text" class="form-control"
                                                    id="txtFolio" name="txtFolio" value="">
                                             <br>
-                                            <label for="txtFactura">Numero de Factura</label>
+                                            <label for="txtFactura">Número de Factura</label>
                                             <input type="text" class="form-control"
                                                    id="txtFactura" name="txtFactura" value="">
                                         </div>
@@ -129,8 +129,8 @@
                                     <th>Folio</th>
                                     <th>Factura</th>
                                     <th>Documento</th>
-                                    <th>Fecha Peticion</th>
-                                    <th>Usuario Peticion</th>
+                                    <th>Fecha Petición</th>
+                                    <th>Usuario Petición</th>
                                     <th>Estatus</th>
                                 </tr>
                                 </thead>
@@ -156,13 +156,13 @@
                                     <th>Folio</th>
                                     <th>Factura</th>
                                     <th>Documento</th>
-                                    <th>Fecha Peticion</th>
-                                    <th>Usuario Peticion</th>
+                                    <th>Fecha Petición</th>
+                                    <th>Usuario Petición</th>
                                     <th>Estatus</th>
                                     <th>Aprobo</th>
                                     <th>Comentarios</th>
                                     <th>Folio Were</th>
-                                    <th>Fecha Aprobacion</th>
+                                    <th>Fecha Aprobación</th>
                                 </tr>
                                 </thead>
                                 <tbody>

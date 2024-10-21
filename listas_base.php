@@ -51,7 +51,7 @@
                                             <th>Aprobo</th>
                                             <th>Comentarios</th>
                                             <th>Folio Were</th>
-                                            <th>Fecha Aprobacion</th>
+                                            <th>Fecha Aprobación</th>
                                         </tr>
                                         </thead>
                                         <tbody>
