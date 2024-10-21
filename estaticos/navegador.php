@@ -15,7 +15,7 @@
             </a>
         </div>
         <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Formularios</span>
+            <span>Administración</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
@@ -42,7 +42,7 @@
             </li>
         </ul>
         <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Administración</span>
+            <span>Usuario</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
