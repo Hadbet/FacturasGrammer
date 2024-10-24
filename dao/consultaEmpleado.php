@@ -7,9 +7,6 @@ function verificacionUsuario($user, $contra, $nombre){
     $con = new LocalConector();
     $conexion=$con->conectar();
 
-    $conAux = new LocalConectorAux();
-    $conexionAux=$conAux->conectarAux();
-
     $consP="SELECT * FROM `Usuarios` WHERE `Nomina` = '$user' and `Password` = '$contra';";
     $rsconsPro=mysqli_query($conexion,$consP);
 
@@ -17,7 +14,6 @@ function verificacionUsuario($user, $contra, $nombre){
         $row = mysqli_fetch_assoc($rsconsPro);
         if (password_verify($contra, $row['Password'])) {
             mysqli_close($conexion);
-            mysqli_close($conexionAux);
             return 2;
         } else {
             // La contraseña es incorrecta
@@ -31,7 +27,6 @@ function verificacionUsuario($user, $contra, $nombre){
 
         if($insert){
             mysqli_close($conexion);
-            mysqli_close($conexionAux);
             return 1;
         }
 
