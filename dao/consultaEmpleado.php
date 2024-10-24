@@ -1,7 +1,6 @@
 <?php
 
-include_once('db/db_RH.php');
-include_once('db/db_Empleado_Aux.php');
+include_once('db/db_Facturas.php');
 
 function verificacionUsuario($user, $contra, $nombre){
 
