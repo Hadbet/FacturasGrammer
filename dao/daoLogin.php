@@ -1,7 +1,7 @@
 <?php
 
 require 'consultaEmpleado.php';
-
+try {
 session_start();
 $nomina = $_POST['nomina'];
 $password = $_POST['password'];
@@ -40,4 +40,8 @@ if ($statusLogin == 1) {
     echo "<script>alert('Ocurrio un error')</script>";
     echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../form_registro.php'>";
 }
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
 ?>
